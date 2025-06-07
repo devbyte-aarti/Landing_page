@@ -1,0 +1,421 @@
+ * {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding-bottom: 80px; /* footer space */
+  }
+  a {
+    color: #6a8caf;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    background: white;
+    box-shadow: 0 2px 6px rgb(106 140 175 / 0.15);
+    z-index: 1000;
+  }
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+  }
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #3a517a;
+    user-select:none;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+  nav ul li a {
+    font-weight: 600;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+  }
+  nav ul li a:hover,
+  nav ul li a:focus {
+    color: #2a3b59;
+    outline: none;
+    text-decoration: underline;
+  }
+
+  /* Hero Section */
+  #hero {
+    background: linear-gradient(135deg, #6a8cafcc, #3a517acc), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+    color: white;
+    padding: 120px 20px 100px;
+    text-align: center;
+  }
+  #hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    user-select:none;
+  }
+  #hero p {
+    font-size: 1.25rem;
+    margin-bottom: 35px;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.4);
+  }
+  #hero a.cta-btn {
+    background: #fff;
+    color: #3a517a;
+    font-weight: 700;
+    padding: 15px 40px;
+    border-radius: 35px;
+    box-shadow: 0 6px 12px rgb(106 140 175 / 0.4);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    user-select:none;
+  }
+  #hero a.cta-btn:hover,
+  #hero a.cta-btn:focus {
+    background: #6a8caf;
+    color: white;
+    outline: none;
+  }
+
+  /* Section Titles */
+  h2.section-title {
+    text-align: center;
+    color: #3a517a;
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 60px 0 40px;
+    user-select:none;
+  }
+
+  /* About Section */
+  #about {
+    
+    padding: 15px 10px;
+   
+  }
+  #about p {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+  }
+
+  /* Benefits Section */
+  .benefits {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto 60px;
+  }
+  .benefits div {
+    background: #6a8caf22;
+    padding: 20px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #3a517a;
+    box-shadow: 1px 1px 5px #6a8caf44;
+    min-width: 140px;
+    text-align: center;
+    user-select:none;
+  }
+
+  /* Event Categories - CSS Tabs */
+  .tabs {
+    max-width: 900px;
+    margin: 0 auto 60px;
+  }
+  .tabs input[type="radio"] {
+    display: none;
+  }
+  .tabs label {
+    background: #eee;
+    padding: 10px 22px;
+    margin: 5px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    user-select:none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  .tabs input[type="radio"]:checked + label {
+    background: #6a8caf;
+    color: white;
+  }
+  .event-list {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 20px;
+  }
+  .event-card {
+    background: white;
+    padding: 20px 18px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgb(106 140 175 / 0.15);
+    display: none;
+  }
+  .event-card h3 {
+    color: #3a517a;
+    margin-bottom: 10px;
+  }
+  .event-card p {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  #tab-comedy:checked ~ .event-list .comedy,
+  #tab-music:checked ~ .event-list .music,
+  #tab-dance:checked ~ .event-list .dance,
+  #tab-theater:checked ~ .event-list .theater {
+    display: block;
+  }
+
+  /* Testimonials Section */
+  .testimonials {
+    background: #6a8caf;
+    color: white;
+    padding: 50px 20px;
+    border-radius: 15px;
+    max-width: 700px;
+    margin: 0 auto 60px;
+    position: relative;
+  }
+  .testimonial-item {
+    display: none;
+    text-align: center;
+    font-style: italic;
+    font-size: 1.1rem;
+    min-height: 110px;
+    padding: 0 15px;
+  }
+  .testimonial-author {
+    margin-top: 20px;
+    font-weight: 700;
+    font-style: normal;
+    color: #d0e0ff;
+    user-select:none;
+  }
+  .testimonials input[type="radio"] {
+    display: none;
+  }
+  #test1:checked ~ .testimonials-list #item1,
+  #test2:checked ~ .testimonials-list #item2,
+  #test3:checked ~ .testimonials-list #item3 {
+    display: block;
+  }
+  .testimonials-nav {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .testimonials-nav label {
+    cursor: pointer;
+    background: #3a517a;
+    border-radius: 6px;
+    color: white;
+    padding: 8px 15px;
+    margin: 0 6px;
+    font-weight: 600;
+    user-select:none;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    min-width: 30px;
+  }
+  .testimonials-nav label:hover {
+    background: #2a3b59;
+  }
+  #test1:checked ~ .testimonials-nav label[for="test1"],
+  #test2:checked ~ .testimonials-nav label[for="test2"],
+  #test3:checked ~ .testimonials-nav label[for="test3"] {
+    background: #2a3b59;
+  }
+
+  /* App Download Section */
+  .app-download {
+    text-align: center;
+    margin: 60px 0 80px;
+  }
+  .app-download h3 {
+    margin-bottom: 25px;
+    color: #3a517a;
+    user-select:none;
+  }
+  .app-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+  .app-buttons a {
+    display: inline-block;
+    background: #6a8caf;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: 700;
+    box-shadow: 0 3px 10px rgb(106 140 175 / 0.5);
+    transition: background-color 0.3s ease;
+    user-select:none;
+  }
+  .app-buttons a:hover,
+  .app-buttons a:focus {
+    background: #56729b;
+    outline: none;
+  }
+
+  /* Contact Section */
+  .contact {
+    max-width: 700px;
+    margin: 0 auto 120px;
+    background: white;
+    padding: 35px 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgb(106 140 175 / 0.15);
+  }
+  .contact h2 {
+    margin-bottom: 40px;
+    color: #3a517a;
+    user-select:none;
+  }
+  .contact-info {
+    margin-bottom: 35px;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    user-select:none;
+  }
+  .contact-info p {
+    margin-bottom: 12px;
+  }
+  .contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .contact input, .contact textarea {
+    padding: 12px 15px;
+    border: 1.8px solid #6a8caf88;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+  }
+  .contact input:focus, .contact textarea:focus {
+    border-color: #6a8caf;
+    outline: none;
+  }
+  .contact textarea {
+    resize: vertical;
+    min-height: 90px;
+  }
+  .contact button {
+    width: 160px;
+    background: #6a8caf;
+    border: none;
+    color: white;
+    font-weight: 700;
+    padding: 14px;
+    border-radius: 35px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.3s ease;
+  }
+  .contact button:hover,
+  .contact button:focus {
+    background: #56729b;
+    outline: none;
+  }
+   
+  .social-icons a {
+  text-decoration: none;
+  color: #333;
+  margin: 0 10px;
+  font-size: 24px;
+  transition: color 0.3s;
+ }
+
+  .social-icons a:hover {
+    color: #6994c1; /*on hover */
+  }
+
+  .social-icons {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  /* Footer */
+  footer {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: #3a517a;
+    color: white;
+    text-align: center;
+    padding: 15px 10px;
+    user-select:none;
+    z-index: 900;
+  }
+  /*  search section*/
+  .search-section {
+  text-align: center;
+  margin: 10px 0;
+}
+.search-section input {
+  padding: 12px 20px;
+  width: 50%;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  color: #888;
+}
+
+
+
+  /* Responsive */
+  @media(max-width: 720px) {
+    nav ul {
+      gap: 15px;
+    }
+    #hero h1 {
+      font-size: 2rem;
+    }
+    #hero p {
+      font-size: 1rem;
+    }
+    .tabs label {
+      padding: 8px 16px;
+      font-size: 0.95rem;
+    }
+    .app-buttons a {
+      padding: 12px 22px;
+    }
+  }
+  @media(max-width: 400px) {
+    .benefits {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
